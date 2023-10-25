@@ -104,6 +104,9 @@ namespace tictactoe
                 playerScore++; // Increment player's score
                 textBox1.Text = playerScore.ToString(); // Update the player's score TextBox
                 gameOver = true;
+                ResetGame();
+                
+                
             }
             else if (CheckForWinner("O"))
             {
@@ -111,11 +114,13 @@ namespace tictactoe
                 aiScore++; // Increment AI's score
                 textBox2.Text = aiScore.ToString(); // Update the AI's score TextBox
                 gameOver = true;
+                ResetGame();
             }
             else if (AllButtonsClicked())
             {
                 MessageBox.Show("It's a draw!");
                 gameOver = true;
+                ResetGame();
             }
         }
         private bool CheckForWinner(string player)
@@ -167,6 +172,17 @@ namespace tictactoe
             playerXTurn = true; // Reset the turn to the player
             gameOver = false; // Reset the game state
         }
+        private void ResetGame()
+        {
+            foreach (Button button in buttons)
+            {
+                button.Text = "";
+                button.Enabled = true;
+            }
+
+            playerXTurn = true;
+            gameOver = false;
+        }
 
         private void Exit(object sender, EventArgs e)
         {
@@ -182,6 +198,19 @@ namespace tictactoe
             aiScore = 0;
             textBox1.Text = playerScore.ToString();
             textBox2.Text = aiScore.ToString();
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btnExt_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to exit the game?", "Confirm Exit", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 

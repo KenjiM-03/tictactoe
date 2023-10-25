@@ -63,6 +63,9 @@ namespace tictactoe
             Button bt = sender as Button;
             bt.Enabled = false;
             bt.BackColor = Color.White;
+            string player1Name = "Player One";
+            string player2Name = "Player Two";
+            string winnerName = "";
             if (who == 'X')
             {
                 bt.Text = "X";
@@ -74,15 +77,21 @@ namespace tictactoe
                     (B3.Text == B6.Text && B6.Text == B9.Text && B6.Text != "") ||
                     (B1.Text == B5.Text && B5.Text == B9.Text && B5.Text != "") ||
                     (B3.Text == B5.Text && B5.Text == B7.Text && B5.Text != ""))
+
                 {
+                    bt.Text = "X";
+                    winnerName = "Player One (X)";
+                    who = 'O';
                     MessageBox.Show($"Player One (X) wins!");
                     playerOneScore++;
                     TB1.Text = playerOneScore.ToString();
                     panel1.Enabled = false;
+                    StartNewGame();
                 }
                 else if (movement == 8)
                 {
                     MessageBox.Show("Draw !!!");
+                    StartNewGame();
                 }
                 who = 'O';
 
@@ -103,13 +112,20 @@ namespace tictactoe
                     playerTwoScore++;
                     TB2.Text = playerTwoScore.ToString();
                     panel1.Enabled = false;
+                    bt.Text = "O";
+                    winnerName = "Player Two (O)";
+                    who = 'X';
+                    StartNewGame();
                 }
                 else if (movement == 8)
                 {
                     MessageBox.Show("Draw !!!");
+                    StartNewGame();
                 }
                 who = 'X';
             }
+
+
         }
 
         private void L1_Click(object sender, EventArgs e)
@@ -159,6 +175,19 @@ namespace tictactoe
             playerTwoScore = 0;
             TB1.Text = playerOneScore.ToString();
             TB2.Text = playerTwoScore.ToString();
+        }
+        private void StartNewGame()
+        {
+            foreach (Button button in buttons)
+            {
+                button.Enabled = true;
+                button.Text = "";
+                button.BackColor = SystemColors.Control;
+            }
+
+            who = 'X';
+            movement = 0;
+            panel1.Enabled = true;
         }
     }
 }
