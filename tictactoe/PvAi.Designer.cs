@@ -52,12 +52,12 @@ namespace tictactoe
             this.panel4 = new System.Windows.Forms.Panel();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button21 = new System.Windows.Forms.Button();
+            this.btnResetScore = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnExt = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
+            this.btnNewGame = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -153,7 +153,7 @@ namespace tictactoe
             this.panel3.Controls.Add(this.button18);
             this.panel3.Controls.Add(this.button12);
             this.panel3.Controls.Add(this.button13);
-            this.panel3.Location = new System.Drawing.Point(12, 54);
+            this.panel3.Location = new System.Drawing.Point(12, 47);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(454, 410);
             this.panel3.TabIndex = 2;
@@ -262,12 +262,12 @@ namespace tictactoe
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel4.Controls.Add(this.textBox2);
             this.panel4.Controls.Add(this.textBox1);
-            this.panel4.Controls.Add(this.button21);
+            this.panel4.Controls.Add(this.btnResetScore);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.btnExt);
-            this.panel4.Controls.Add(this.button19);
+            this.panel4.Controls.Add(this.btnNewGame);
             this.panel4.Location = new System.Drawing.Point(472, 54);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(169, 358);
@@ -287,14 +287,15 @@ namespace tictactoe
             this.textBox1.Size = new System.Drawing.Size(135, 23);
             this.textBox1.TabIndex = 6;
             // 
-            // button21
+            // btnResetScore
             // 
-            this.button21.Location = new System.Drawing.Point(86, 9);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(74, 61);
-            this.button21.TabIndex = 5;
-            this.button21.Text = "Reset Score";
-            this.button21.UseVisualStyleBackColor = true;
+            this.btnResetScore.Location = new System.Drawing.Point(86, 9);
+            this.btnResetScore.Name = "btnResetScore";
+            this.btnResetScore.Size = new System.Drawing.Size(74, 61);
+            this.btnResetScore.TabIndex = 5;
+            this.btnResetScore.Text = "Reset Score";
+            this.btnResetScore.UseVisualStyleBackColor = true;
+            this.btnResetScore.Click += new System.EventHandler(this.btnResetScore_Click);
             // 
             // label3
             // 
@@ -336,14 +337,15 @@ namespace tictactoe
             this.btnExt.UseVisualStyleBackColor = true;
             this.btnExt.Click += new System.EventHandler(this.btnExt_Click);
             // 
-            // button19
+            // btnNewGame
             // 
-            this.button19.Location = new System.Drawing.Point(49, 272);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(77, 23);
-            this.button19.TabIndex = 0;
-            this.button19.Text = "New Game";
-            this.button19.UseVisualStyleBackColor = true;
+            this.btnNewGame.Location = new System.Drawing.Point(49, 272);
+            this.btnNewGame.Name = "btnNewGame";
+            this.btnNewGame.Size = new System.Drawing.Size(77, 23);
+            this.btnNewGame.TabIndex = 0;
+            this.btnNewGame.Text = "New Game";
+            this.btnNewGame.UseVisualStyleBackColor = true;
+            this.btnNewGame.Click += new System.EventHandler(this.btnNewGame_Click);
             // 
             // PvAi
             // 
@@ -384,10 +386,10 @@ namespace tictactoe
         private Button button17;
         private Button button18;
         private Button btnExt;
-        private Button button19;
+        private Button btnNewGame;
         private TextBox textBox2;
         private TextBox textBox1;
-        private Button button21;
+        private Button btnResetScore;
         private Label label3;
         private Label label2;
         private Label label1;

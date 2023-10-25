@@ -192,7 +192,7 @@ namespace tictactoe
             }
         }
 
-        private void ResetScore(object sender, EventArgs e)
+        private void ResetScore()
         {
             playerScore = 0;
             aiScore = 0;
@@ -211,6 +211,16 @@ namespace tictactoe
             {
                 Application.Exit();
             }
+        }
+
+        private void btnResetScore_Click(object sender, EventArgs e)
+        {
+            ResetScore();
+        }
+
+        private void btnNewGame_Click(object sender, EventArgs e)
+        {
+            ResetGame();
         }
     }
 

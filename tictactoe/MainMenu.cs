@@ -44,8 +44,7 @@ namespace tictactoe
 
         private void btnMatchHistory_Click(object sender, EventArgs e)
         {
-            //MatchHistory matchHistory = new MatchHistory();
-            //matchHistory.Show();
+           
                 
         }
     }

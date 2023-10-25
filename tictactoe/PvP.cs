@@ -65,7 +65,7 @@ namespace tictactoe
             bt.BackColor = Color.White;
             string player1Name = "Player One";
             string player2Name = "Player Two";
-            string winnerName = "";
+            string winnerName = (who == 'X') ? "Player One (X)" : "Player Two (O)";
             if (who == 'X')
             {
                 bt.Text = "X";
@@ -124,6 +124,9 @@ namespace tictactoe
                 }
                 who = 'X';
             }
+                        
+        
+
 
 
         }
@@ -189,5 +192,6 @@ namespace tictactoe
             movement = 0;
             panel1.Enabled = true;
         }
+
     }
 }
