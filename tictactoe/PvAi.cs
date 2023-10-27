@@ -207,10 +207,7 @@ namespace tictactoe
 
         private void btnExt_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to exit the game?", "Confirm Exit", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
+            Application.Exit();
         }
 
         private void btnResetScore_Click(object sender, EventArgs e)
